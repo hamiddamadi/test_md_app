@@ -29,6 +29,7 @@
 
 /* Styles for button groups */
 .btn-group {
+    width: 40%;
     margin-top: .0001px; /* Top margin for spacing above button groups */
     margin-bottom: 20px; /* Bottom margin for spacing below button groups */
 }

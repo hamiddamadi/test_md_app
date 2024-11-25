@@ -68,7 +68,7 @@ router.post('/register',[
 
         const payload = {
             user: {
-                id: newUser.id,
+                id: newUser.email,
             }
         }
         const authtoken = jwt.sign(payload, JWT_SECRET);
@@ -103,12 +103,13 @@ router.post('/login', [
             if (checkHash) {
                 let payload = {
                     user: {
-                        id: theUser.id
+                        id: theUser.email
                     }
                 }
                 const authtoken = jwt.sign(payload, JWT_SECRET);
                 return res.status(200).json({ authtoken });
             } else {
+                console.log('111111111111111111111111')
                 return res.status(403).json({ error: "Invalid Credentials" });
             }
         } else {

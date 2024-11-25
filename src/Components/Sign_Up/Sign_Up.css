@@ -91,6 +91,7 @@
 
 /* Styles for button group in the signup form */
 .btn-group {
+    width: 40%;
     margin-top: .0001px; /* Add a small top margin to button group */
     margin-bottom: 20px; /* Add bottom margin to button group */
 }

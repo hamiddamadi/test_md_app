@@ -37,12 +37,12 @@ function Navbar() {
                         <a href="#">Appointments</a>
                     </li>
                     <li className="link">
-                        <a href="../Sign_Up//Sign_Up.html">
+                        <a href="../sign_up">
                             <button className="btn1">Sign Up</button>
                         </a>
                     </li>
                     <li className="link">
-                        <a href="../Login/Login.html">
+                        <a href="../login">
                             <button className="btn1">Login</button>
                         </a>
                     </li>
