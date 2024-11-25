@@ -26,7 +26,7 @@ function App() {
                 {/* Set up the Routes for different pages */}
                 <Routes>
                     <Route path="/" element={<Landing_Page />} />
-                    <Route path="/sign_up" element={<Sign_Up />} />
+                    <Route path="/signup" element={<Sign_Up />} />
                     <Route path="/login" element={<Login />} />
 
                     <Route path="/instant-consultation" element={<InstantConsultation />} />
