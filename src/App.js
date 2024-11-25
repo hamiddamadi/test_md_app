@@ -9,7 +9,9 @@ import Navbar from './Components/Navbar/Navbar';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
-
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation'
+import Notification from './Components/Notification/Notification';
+import GiveReviews from './Components/ReviewForm/ReviewForm'
 
 // Function component for the main App
 function App() {
@@ -27,6 +29,10 @@ function App() {
                     <Route path="/sign_up" element={<Sign_Up />} />
                     <Route path="/login" element={<Login />} />
 
+                    <Route path="/instant-consultation" element={<InstantConsultation />} />
+                    <Route path="/notification" element={<Notification />} />
+                    <Route path="/reviews" element={<GiveReviews />} />
+                    
                 </Routes>
             </BrowserRouter>
         </div>

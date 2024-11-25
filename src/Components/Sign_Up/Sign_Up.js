@@ -11,7 +11,7 @@ const Sign_Up = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
-    const [showerr, setShowerr] = useState([]); // State to show error messages
+    const [showerr, setShowerr] = useState({}); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
 
     // Function to handle form submission
@@ -52,7 +52,7 @@ const Sign_Up = () => {
                 }
             } else {
                 if (json.error[0].param === 'phone') {
-                    setShowerr(json.error[0].msg);
+                    setShowerr({ param: 'phone', msg: json.error[0].msg });
                 }
             }
         }
@@ -67,22 +67,22 @@ const Sign_Up = () => {
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
-                            {showerr && showerr.name === 'email' && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                            {showerr && showerr.param === 'email' && <div className="err" style={{ color: 'red' }}>{showerr.msg}</div>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="text">Name</label>
                             <input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
-                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                            {showerr && showerr.param === 'name' && <div className="err" style={{ color: 'red' }}>{showerr.msg}</div>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="number">Phone</label>
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" name="phone" id="phone" className="form-control" placeholder="Enter your phone" aria-describedby="helpId" />
-                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                            {showerr && showerr.param === 'phone' && <div className="err" style={{ color: 'red' }}>{showerr.msg}</div>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
-                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                            {showerr && showerr.param === 'password' && <div className="err" style={{ color: 'red' }}>{showerr.msg}</div>}
                         </div>
                         <div className="btn-group">
                             {/* Login button */}
